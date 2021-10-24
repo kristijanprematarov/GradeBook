@@ -1,8 +1,8 @@
-using System;
-using Xunit;
-
 namespace GradeBook.Test
 {
+    using System;
+    using Xunit;
+
     public class UnitTest1
     {
         [Fact]
