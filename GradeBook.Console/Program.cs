@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace GradeBook
+﻿namespace GradeBook
 {
     using System;
 
@@ -9,11 +6,15 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var grades = new List<double>() { 12.7, 10.3, 6.11, 4.1 };
-            grades.Add(56.1);
-
-            var result = grades.Average();
-            Console.WriteLine($"The average grade is {result.ToString("N3")}");
+            var book = new Book("Natasa Prematarova GradeBook");
+            book.AddGrade(68.6);
+            book.AddGrade(75.4);
+            book.AddGrade(89.1);
+            book.AddGrade(90.5);
+            var stats = book.GetStatistics();
+            Console.WriteLine($"The lowest grade is {stats.Low.ToString("N3")}");
+            Console.WriteLine($"The highest grade is {stats.High.ToString("N3")}");
+            Console.WriteLine($"The average grade is {stats.Average.ToString("N3")}");
         }
     }
 }
